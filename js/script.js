@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     /* shows current day of the week, month and day of the month in the browser */
     $("#currentDay").text(moment().format("dddd, MMMM Do"));
@@ -6,49 +5,37 @@ $(document).ready(function(){
     
 })
 
-var timeArray = ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"]
-var currentTime = moment().format("h A");
+let timeArray = ["9","10", "11", "12", "13", "14", "15", "16", "17"]
+// let i = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+let currentTime = moment().format("H");
+////console.log("currentTime line 10 " + currentTime);
+//console.log("array line 11 " + timeArray[0]);
 
 
-//gives the current time to the hour for each span element that contains 
-//the time in string format. for example 11A M.
-//The each() method specifies a function to run for each matched element.
-//element - The current element (the "this" selector can also be used).
-//source: https://www.w3schools.com/jquery/misc_each.asp.
-//Syntax:  $(selector).each(function(index,element))/
-$(".TIME").each(function(i){
-    //current hour (see line 5 to display it in the browser).
-   $(this).text(moment().hour(i+9).format("h A"));
-    
-})
+//$(document).ready(function() {
+    //console.log("currentTime in document line 122 " + currentTime)
+//$('.Timer').each( timeArray, function(timeArray) {
+        //console.log("currentTime in document line 18 " + currentTime)
+        //console.log("timeArray document line 125 " + timeArray)
+        //console.log("indexOf line 130" + timeArray.indexOf(currentTime));
+    for (i=0; i < 9; i++) {
 
-$(document).ready(function(){
-    
-    $.each( timeArray, function(value) {
-        console.log("currentTime in document line 29 " + currentTime)
-        console.log("timeArray document line 29 " + timeArray)
-
-        if (currentTime < timeArray[value]) {
-            console.log("currentTime in document line 30 " + currentTime)
-            //alert("yes!")
-        $('.TextBox').css('background-color', 'green')
-
-        if (currentTime === timeArray[value]) {
-            console.log("currentTime in document line 30 " + currentTime)
-            //alert("yes!")
-        $('.TextBox').css('background-color', 'red')
+        //console.log("currentTime in document line 24 " + currentTime)
+        //console.log("indexOf in document line 24 " + timeArray.indexOf(1))
+        //if (currentTime < parseInt(timeArray.indexOf(currentTime))) {
+        if (currentTime > timeArray[i]) {
+            //console.log("currentTime in document line 132 " + currentTime)
+            $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'gray')
         }
-
-        if (currentTime > timeArray[value]) {
+        if (currentTime === timeArray[i]) {
+            //console.log("currentTime line 34 " + currentTime)
+            $(`.TextBoxColors-${currentTime}`).css('background-color', 'Tomato')
+        }
+        
+        if (currentTime < timeArray[i]) {
+            let value = timeArray[i];
+            //let value = timeArray.indexOf("currentTime",currentTime);
             console.log("currentTime in document line 30 " + currentTime)
-            //alert("yes!")
-        $('.TextBox').css('background-color', 'gray')
+            $(`.TextBoxColors-${value}`).css('background-color', 'green')
         }
-        }
-
-    });
-});
-
-    
-
-
+}
