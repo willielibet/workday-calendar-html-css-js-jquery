@@ -1,0 +1,32 @@
+/* body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+  } */
+
+
+.input-group-text {
+    min-width: 92px !important;
+    text-align: center !important;
+    /* font-size: 120% !important; */
+    /* width: 9.2vw !important; */
+}
+
+/* .two-digits { */
+    /* width: 10.3% !important; */
+/* } */
+
+/* /* .mozilla #container */
+/* { */
+    /* width: 9.2vw !important; */
+    /* height: 100% !important; */
+  /* } */
+
+  /* @-moz-document url-prefix() {
+    h1 {
+      color: red;
+    }
+  } */

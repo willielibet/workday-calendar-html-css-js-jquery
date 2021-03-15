@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+     <!-- fontawsome -->
+     <script src="https://kit.fontawesome.com/55f2eac7a6.js" crossorigin="anonymous"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="moment.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <h2>A simple calendar app for scheduling your work day</h2>
+      <!-- <span  id="currentDay"></span> -->
+      <p id="currentDay" class="lead"></p>
+    </header>
+   
+    <!-- source: Sizing #
+    https://getbootstrap.com/docs/4.0/components/input-group/ -->
+
+    <!-- <script>
+        var today = moment().format('dddd, MMMM Do');
+        $("#currentDay").text(today)
+    </script> -->
+
+    <!-- 9:00AM -->
+    <div class="input-group input-group-lg  field-size" >
+        <div class="input-group-prepend">
+        <!-- <div class="input-group-prepend" style="color:red; background-color:blue;"> -->
+          <span class="input-group-text" id="inputGroup-sizing-lg">9AM</span>
+        </div>
+        <!-- <input type="text" class="form-control" aria-label="9:00 AM" aria-describedby="inputGroup-sizing-sm"> -->
+        <textarea type="text" class="form-control" aria-label="8:00 AM" aria-describedby="inputGroup-sizing-sm"></textarea>
+        <!-- source:
+        https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-save -->
+        <button class="btn btn-primary" type="button" id="saveToDo-0"><i class="fa fa-floppy-o" style="font-size:18px"></i>
+        </button>
+    </div>
+
+    <!-- 10:00AM -->
+    <div class="input-group input-group-lg field-size" >
+        <div class="input-group-prepend two-digits">
+            <span class="input-group-text" id="inputGroup-sizing-lg">10AM</span>
+        </div>
+        <!-- <input type="text" class="form-control" aria-label="10:00 AM" aria-describedby="inputGroup-sizing-sm"> -->
+        <textarea type="text" class="form-control" aria-label="8:00 AM" aria-describedby="inputGroup-sizing-sm"></textarea>
+        <!-- source:
+        https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-save -->
+        <button class="btn btn-primary" type="button" id="saveToDo-0"><i class="fa fa-floppy-o" style="font-size:18px;"></i>
+        </button>
+    </div>
+
+    <!-- 11:00AM-->
+    <div class="input-group input-group-lg field-size" >
+        <div class="input-group-prepend two-digits">
+            <span class="input-group-text" id="inputGroup-sizing-lg">11AM</span>
+        </div>
+        <!-- <input type="text" class="form-control" aria-label="11:00 AM" aria-describedby="inputGroup-sizing-sm"> -->
+        <textarea type="text" class="form-control" aria-label="8:00 AM" aria-describedby="inputGroup-sizing-sm"></textarea>
+        <!-- source:
+        https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-save -->
+        <button class="btn btn-primary" type="button" id="saveToDo-0"><i class="fa fa-floppy-o" style="font-size:18px;"></i>
+        </button>
+    </div>
+
+      <!-- 12:00PM-->
+      <div class="input-group input-group-lg field-size" >
+        <div class="input-group-prepend two-digits">
+          <span class="input-group-text" id="inputGroup-sizing-lg">12AM</span>
+        </div>
+        <!-- <input type="text" class="form-control" aria-label="12:00 AM" aria-describedby="inputGroup-sizing-sm"> -->
+        <textarea type="text" class="form-control" aria-label="8:00 AM" aria-describedby="inputGroup-sizing-sm"></textarea>
+        <!-- source:
+        https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-save -->
+        <button class="btn btn-primary" type="button" id="saveToDo-0"><i class="fa fa-floppy-o" style="font-size:18px;"></i>
+        </button>
+    </div>
+
+    <!-- 1:00PM-->
+    <div class="input-group input-group-lg field-size" >
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">1PM</span>
+        </div>
+        <!-- <input type="text" class="form-control" aria-label="1:00 PM" aria-describedby="inputGroup-sizing-sm"> -->
+        <textarea type="text" class="form-control" aria-label="1:00 PM" aria-describedby="inputGroup-sizing-sm"></textarea>
+        <!-- source:
+        https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-save -->
+        <button class="btn btn-primary" type="button" id="saveToDo-0"><i class="fa fa-floppy-o" style="font-size:18px;"></i>
+        </button>
+    </div>
+
+    <!-- 2:00PM-->
+    <div class="input-group input-group-lg field-size" >
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">2PM</span>
+        </div>
+        <!-- <input type="text" class="form-control" aria-label="2:00 PM" aria-describedby="inputGroup-sizing-sm"> -->
+        <textarea type="text" class="form-control" aria-label="2:00 PM" aria-describedby="inputGroup-sizing-sm"></textarea>
+        <!-- source:
+        https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-save -->
+        <button class="btn btn-primary" type="button" id="saveToDo-0"><i class="fa fa-floppy-o" style="font-size:18px;"></i>
+        </button>
+    </div>
+
+    <!-- 3:00PM-->
+    <div class="input-group input-group-lg field-size" >
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">3PM</span>
+        </div>
+        <!-- <input type="text" class="form-control" aria-label="8:00 AM" aria-describedby="inputGroup-sizing-sm"> -->
+        <textarea type="text" class="form-control" aria-label="3:00 AM" aria-describedby="inputGroup-sizing-sm"></textarea>
+        <!-- source:
+        https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-save -->
+        <button class="btn btn-primary" type="button" id="saveToDo-0"><i class="fa fa-floppy-o" style="font-size:18px;"></i>
+        </button>
+    </div>
+
+      <!-- 4:00PM-->
+      <div class="input-group input-group-lg field-size" >
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-lg">4PM</span>
+        </div>
+        <!-- <input type="text" class="form-control" aria-label="4:00 AM" aria-describedby="inputGroup-sizing-sm"> -->
+        <textarea type="text" class="form-control" aria-label="4:00 PM" aria-describedby="inputGroup-sizing-sm"></textarea>
+        <!-- source:
+        https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-save -->
+        <button class="btn btn-primary" type="button" id="saveToDo-0"><i class="fa fa-floppy-o" style="font-size:18px;"></i>
+        </button>
+    </div>
+
+          <!-- 5:00PM-->
+          <div class="input-group input-group-lg field-size" >
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-lg">5PM</span>
+            </div>
+            <!-- <input type="text" class="form-control" aria-label="5:00 PM" aria-describedby="inputGroup-sizing-sm"> -->
+            <textarea type="text" class="form-control" aria-label="5:00 PM" aria-describedby="inputGroup-sizing-sm"></textarea>
+            <!-- source:
+            https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-save -->
+            <button class="btn btn-primary" type="button" id="saveToDo-0"><i class="fa fa-floppy-o" style="font-size:18px;"></i>
+            </button>
+        </div>
+    
+
+
+ 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
