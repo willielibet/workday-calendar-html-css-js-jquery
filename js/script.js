@@ -18,24 +18,46 @@ let currentTime = moment().format("H");
         //console.log("currentTime in document line 18 " + currentTime)
         //console.log("timeArray document line 125 " + timeArray)
         //console.log("indexOf line 130" + timeArray.indexOf(currentTime));
-    for (i=0; i < 9; i++) {
+    //for (i=0; i < 9; i++) {
+        let i=0;
+        while (i<9) {
 
         //console.log("currentTime in document line 24 " + currentTime)
         //console.log("indexOf in document line 24 " + timeArray.indexOf(1))
         //if (currentTime < parseInt(timeArray.indexOf(currentTime))) {
-        if (currentTime > timeArray[i]) {
-            //console.log("currentTime in document line 132 " + currentTime)
-            $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'gray')
+        //if (currentTime > timeArray[i]) {
+            
+           // $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'gray')
+        //}
+        if (currentTime > parseInt(timeArray[0])) {
+            $(`.TextBoxColors-${timeArray[0]}`).css('background-color', 'gray')
         }
-        if (currentTime === timeArray[i]) {
-            //console.log("currentTime line 34 " + currentTime)
+        else if (currentTime === timeArray[0]) {
             $(`.TextBoxColors-${currentTime}`).css('background-color', 'Tomato')
         }
-        
-        if (currentTime < timeArray[i]) {
-            let value = timeArray[i];
-            //let value = timeArray.indexOf("currentTime",currentTime);
-            console.log("currentTime in document line 30 " + currentTime)
-            $(`.TextBoxColors-${value}`).css('background-color', 'green')
+        else if (currentTime < timeArray[0]) {
+            $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'green')
         }
+        else {
+        }
+
+        console.log("timeArray l-30 " + timeArray[i])
+        if (currentTime > timeArray[i]) {
+            $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'gray')
+            console.log("currentTime l-32 " + currentTime)
+            console.log("timeArray l-33 " + timeArray[i])
+        } 
+        else if (currentTime === timeArray[i]) {
+            //console.log("currentTime line 34 " + currentTime)
+            $(`.TextBoxColors-${currentTime}`).css('background-color', 'Tomato')
+        } 
+        else if (currentTime < timeArray[i]) {
+            // console.log("timeArray l34 " + timeArray[i])
+            // console.log("currentTime l-42 " + currentTime)
+            // console.log("timeArray l-42 " + timeArray[i])
+            $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'green')
+        } 
+        else {
+        }
+        i++
 }
