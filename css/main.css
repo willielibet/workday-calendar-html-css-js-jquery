@@ -34,3 +34,9 @@
   .input-group-lg {
       color: red !important;
   }
+
+  .btn:hover {
+    color: orange;
+    background-color: greenyellow;
+  }
+  }
