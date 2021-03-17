@@ -4,36 +4,42 @@ $(document).ready(function(){
     // $("#currentDay").text(moment().hour(1+9).format("h A"));
 })
 
-let timeArray = [09, "10", "11", "12", "13", "14", "15", "16", "17"]
-
+//my array representing the blocks in the calendar.
+let timeArray = [9, "10", "11", "12", "13", "14", "15", "16", "17"]
+//current time in military time.
 let currentTime = moment().format("H");
 
 //calendar is green from 1am to 9am
 if (currentTime >= 1 && currentTime < 9) {
 
     for (i=0; i < 9; i++) {
-    //console.log("currentTime is greater " + currentTime)
+    console.log("currentTime is greater " + currentTime)
     $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'MediumSeaGreen')
     }
 
 } else {
+    //if (currentTime > 9 && currentTime < 18) {
     //takes care of calendar colors from 9am to 1am
     for (i=0; i < 9; i++) {    
 
         console.log("l-41 currentTime " + currentTime + " and timeArray " + timeArray[i])
-        if (currentTime > timeArray[i]) {
-            $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'Gray')
+        if (currentTime < timeArray[i]) {
+            $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'MediumSeaGreen')
             console.log("l-44 currentTime " + currentTime + " > timeArray " + timeArray[i])
         } 
         else if (currentTime === timeArray[i]) {
             $(`.TextBoxColors-${currentTime}`).css('background-color', 'Tomato')
             console.log("l-48 currentTime " + currentTime + " == timeArray " + timeArray[i])
         } 
-        else { //if (currentTime < timeArray[i]) {
-                $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'MediumSeaGreen')
+        if (currentTime > timeArray[i]) {
+                $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'Gray')
                 console.log("currentTime l-52 " + currentTime + " < timeArray " + timeArray[i])
         } 
     }
+}
+
+if (currentTime === 9) {
+    $(`.TextBoxColors-${timeArray[0]}`).css('background-color', 'Tomato')
 }
 
 //localStorage.setItem("item", JSON.stringify(localS));
@@ -54,24 +60,10 @@ if (currentTime >= 1 && currentTime < 9) {
 //     document.getElementByClass(".btnlocalStorage").value = myContent;
 // }
 
-
- $(document).ready(function() {
-
-    $(".btnlocalStorage").on("click", function() {
-        event.preventDefault();
-        console.log("I am clicked!")
-       var myContent = $(this).val();
-       localStorage.setItem("myContent", myContent);
-       //localStorage.setItem("myContent", JSON.stringify(myContent));
-    })
-
-})
-
-
 //myLoad();
 
+showLocalStorage()
 
-//good
 $(document).ready(function(){
     $(".btnlocalStorage").on("click", function() {
         localStorage.setItem("myContent09", $("#TextBoxStorage-09").val());
@@ -83,80 +75,35 @@ $(document).ready(function(){
         localStorage.setItem("myContent15", $("#TextBoxStorage-15").val());
         localStorage.setItem("myContent16", $("#TextBoxStorage-16").val());
         localStorage.setItem("myContent17", $("#TextBoxStorage-17").val());
-
-       
-        var myContent09 = JSON.parse(localStorage.getItem("myContent09"));
-        //document.getElementByClass("#TextBoxStorage-09").value = myContent09;
-// }
-
-//         // console.log(localStorage.getItem("myContent09"));
-//         // console.log(localStorage.getItem("myContent10"));
-//         // console.log(localStorage.getItem("myContent11"));
-//         // console.log(localStorage.getItem("myContent12"));
-//         // console.log(localStorage.getItem("myContent13"));
-//         // console.log(localStorage.getItem("myContent14"));
-//         // console.log(localStorage.getItem("myContent15"));
-//         // console.log(localStorage.getItem("myContent16"));
-//         // console.log(localStorage.getItem("myContent17"));
     })
 });
 
-// function myLoad() {
-//     JSON.parse(localStorage.getItem("myContent09"));
-//     //let myContent = JSON.parse(localStorage.getItem("myContent09"));
-//     //document.getElementById("#TextBoxStorage-09").value = myContent;
-//     //$(".btnlocalStorage").val(myContent);
-// }
-
-
-// $(document).ready(function() {
+// $(document).ready(function(){
+//     for (i=0; i < 9; i++) {
 //     $(".btnlocalStorage").on("click", function() {
-//         event.preventDefault();
-//         console.log("I am clicked!")
-//        var myContent = $(this).prev().val();
-//        localStorage.setItem("myContent", myContent);
-    //    localStorage.setItem("myContent", myContent10);
-    //    localStorage.setItem("myContent", myContent11);
-    //    localStorage.setItem("myContent", myContent12);
-    //    localStorage.setItem("myContent", myContent13);
-    //    localStorage.setItem("myContent", myContent14);
-    //    localStorage.setItem("myContent", myContent15);
-    //    localStorage.setItem("myContent", myContent16);
-    //    localStorage.setItem("myContent", myContent17);
-       //localStorage.setItem("myContent", JSON.stringify(myContent));
+//         localStorage.setItem("myContent09", $(`#TextBoxStorage-${i}`).val());
 //     });
+//     }
 // });
 
+function showLocalStorage() {
+    var myContent09 = localStorage.getItem("myContent09");
+    var myContent10 = localStorage.getItem("myContent10");
+    var myContent11 = localStorage.getItem("myContent11");
+    var myContent12 = localStorage.getItem("myContent12");
+    var myContent13 = localStorage.getItem("myContent13");
+    var myContent14 = localStorage.getItem("myContent14");
+    var myContent15 = localStorage.getItem("myContent15");
+    var myContent16 = localStorage.getItem("myContent16");
+    var myContent17 = localStorage.getItem("myContent17");
 
-
-// $(document).ready(function() {
-
-//     $("[name='myTextArea']").on("click", function() {
-//         //var myContent = document.getElementsByClassName("btnlocalStorage").value;
-//         //localStorage.setItem("myContent", myContent);
-//         console.log("This worked");
-//     });
-// });
-
-
-
-
-// Event listener to save to local stroage
-// $(".saveBtn").click(function () {
-//     event.preventDefault();
-//     var formValue = $(this).siblings(".form-control").val();
-//     console.log("This worked");
-//     var listItem = $(this).parent().data("hour");
-
-//     localStorage.setItem(listItem, formValue);
-// });
-
-
-
-// $('#saveToDo-5pm, #saveToDo-4pm').click(function() {
-//     event.preventDefault();
-//     let clickedButton = $(this).attr('id').val();
-//     console.log(clickedButton);
-//     localStorage.setItem("myContent", clickedButton);
-
-// });
+    $('#TextBoxStorage-09').val(myContent09);
+    $('#TextBoxStorage-10').val(myContent10);
+    $('#TextBoxStorage-11').val(myContent11);
+    $('#TextBoxStorage-12').val(myContent12);
+    $('#TextBoxStorage-13').val(myContent13);
+    $('#TextBoxStorage-14').val(myContent14);
+    $('#TextBoxStorage-15').val(myContent15);
+    $('#TextBoxStorage-16').val(myContent16);
+    $('#TextBoxStorage-17').val(myContent17);
+}
