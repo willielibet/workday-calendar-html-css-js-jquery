@@ -8,27 +8,38 @@ $(document).ready(function(){
 let timeArray = [9, "10", "11", "12", "13", "14", "15", "16", "17"]
 //current time in military time.
 let currentTime = moment().format("H");
+//let currentTime = moment().add(0, 'hours').format("H");
+//console.log("l-12 currentTime " + currentTime)
 
 //calendar is green from 1am to 9am
-if (currentTime >= 1 && currentTime < 9) {
+if (currentTime >= 0 && currentTime < 9) {
 
-    for (i=0; i < 9; i++) {
-    console.log("currentTime is greater " + currentTime)
+    for (i=0; i < timeArray.length; i++) {
+  
     $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'MediumSeaGreen')
     }
 
-} //else {
+} 
+
+//calendar is gray from 6pm to 12am
+if (currentTime >= 18  && currentTime < 24) {
+
+    for (i=0; i < timeArray.length; i++) {
+    $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'Gray')
+    }
+
+} 
 
     //takes care of calendar colors from 9am to 1am
 if (currentTime > 9 && currentTime < 18) {
-    for (i=0; i < 9; i++) {    
+    for (i=0; i < timeArray.length; i++) {    
 
         console.log("l-41 currentTime " + currentTime + " and timeArray " + timeArray[i])
         if (currentTime < timeArray[i]) {
             $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'MediumSeaGreen')
             console.log("l-44 currentTime " + currentTime + " > timeArray " + timeArray[i])
         } 
-        else if (currentTime === timeArray[i] || currentTime === 9) {
+        else if (currentTime == timeArray[i]) {
             $(`.TextBoxColors-${currentTime}`).css('background-color', 'Tomato')
             console.log("l-48 currentTime " + currentTime + " == timeArray " + timeArray[i])
         } 
@@ -39,10 +50,14 @@ if (currentTime > 9 && currentTime < 18) {
     }
 }
 
-//shows gray after 9am
-// if (currentTime === 9) {
-//     $(`.TextBoxColors-${currentTime}`).css('background-color', 'Tomato')
-// }
+//shows tomato at 9am
+if (currentTime == 9) {
+    $(`.TextBoxColors-${timeArray[0]}`).css('background-color', 'Tomato')
+
+    for (i=1; i < timeArray.length; i++) {
+        $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'MediumSeaGreen')
+    }
+} 
 
 //localStorage.setItem("item", JSON.stringify(localS));
 
@@ -77,6 +92,14 @@ $(document).ready(function(){
         localStorage.setItem("myContent15", $("#TextBoxStorage-15").val());
         localStorage.setItem("myContent16", $("#TextBoxStorage-16").val());
         localStorage.setItem("myContent17", $("#TextBoxStorage-17").val());
+    })
+});
+
+//this works
+$(document).ready(function(){
+    $(".btnlocalStorage").on("click", function() {
+        localStorage.setItem($(this).prop("id"), $(this).prev().val());
+        console.log(localStorage.getItem($(this).prop("id")));
     })
 });
 
