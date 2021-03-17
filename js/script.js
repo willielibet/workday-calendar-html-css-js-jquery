@@ -39,7 +39,7 @@ if (currentTime >= 1 && currentTime < 9) {
 }
 
 if (currentTime === 9) {
-    $(`.TextBoxColors-${timeArray[0]}`).css('background-color', 'Tomato')
+    $(`.TextBoxColors-${currentTime}`).css('background-color', 'Tomato')
 }
 
 //localStorage.setItem("item", JSON.stringify(localS));
@@ -77,14 +77,6 @@ $(document).ready(function(){
         localStorage.setItem("myContent17", $("#TextBoxStorage-17").val());
     })
 });
-
-// $(document).ready(function(){
-//     for (i=0; i < 9; i++) {
-//     $(".btnlocalStorage").on("click", function() {
-//         localStorage.setItem("myContent09", $(`#TextBoxStorage-${i}`).val());
-//     });
-//     }
-// });
 
 function showLocalStorage() {
     var myContent09 = localStorage.getItem("myContent09");
