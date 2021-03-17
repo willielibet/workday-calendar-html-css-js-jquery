@@ -39,4 +39,8 @@
     color: orange;
     background-color: greenyellow;
   }
+  
+  .form-control:hover {
+    background-color: rgb(225, 218, 255) !important;
+    font-weight: 1000 !important;
   }

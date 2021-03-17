@@ -33,14 +33,74 @@ let currentTime = moment().format("H");
 
 //source:
 //https://www.tiny.cloud/blog/javascript-localstorage/
-myLoad()
+//myLoad()
 
-function mySave() {
-    var myContent = document.getElementById("TextBoxStorage-17").value;
-    localStorage.setItem("myContent", myContent);
-}
+// function mySave() {
+//     var myContent = document.getElementsByClassName("btnlocalStorage").value;
+//     localStorage.setItem("myContent", myContent);
+// }
 
-function myLoad() {
-    var myContent = localStorage.getItem("myContent");
-    document.getElementById("TextBoxStorage-17").value = myContent;
-}
+// function myLoad() {
+//     //var myContent = JSON.parse(localStorage.getItem("myContent"));
+//     document.getElementByClass(".btnlocalStorage").value = myContent;
+// }
+
+//  $(document).ready(function() {
+
+//     $(".btnlocalStorage").on("click", function() {
+//         event.preventDefault();
+//         console.log("I am clicked!")
+//        var myContent = $(this).(".btnlocalStorage").val();
+//        localStorage.setItem("myContent", myContent);
+//        //localStorage.setItem("myContent", JSON.stringify(myContent));
+//     })
+
+// })
+
+var saveToLocalStorage = jQuery('.parent').find('.form-control')
+
+//good
+// $(document).ready(function(){
+//     $(".btnlocalStorage").on("click", function() {
+//         localStorage.setItem("myContent14", $("#TextBoxStorage-14").val());
+//         localStorage.setItem("myContent15", $("#TextBoxStorage-15").val());
+//         localStorage.setItem("myContent16", $("#TextBoxStorage-16").val());
+//         localStorage.setItem("myContent17", $("#TextBoxStorage-17").val());
+//         console.log(localStorage.getItem("myContent14"));
+//         console.log(localStorage.getItem("myContent15"));
+//         console.log(localStorage.getItem("myContent16"));
+//         console.log(localStorage.getItem("myContent17"));
+//     })
+// });
+
+// $(document).ready(function() {
+
+//     $("[name='myTextArea']").on("click", function() {
+//         //var myContent = document.getElementsByClassName("btnlocalStorage").value;
+//         //localStorage.setItem("myContent", myContent);
+//         console.log("This worked");
+//     });
+// });
+
+
+
+
+// Event listener to save to local stroage
+// $(".saveBtn").click(function () {
+//     event.preventDefault();
+//     var formValue = $(this).siblings(".form-control").val();
+//     console.log("This worked");
+//     var listItem = $(this).parent().data("hour");
+
+//     localStorage.setItem(listItem, formValue);
+// });
+
+
+
+// $('#saveToDo-5pm, #saveToDo-4pm').click(function() {
+//     event.preventDefault();
+//     let clickedButton = $(this).attr('id').val();
+//     console.log(clickedButton);
+//     localStorage.setItem("myContent", clickedButton);
+
+// });
