@@ -17,9 +17,10 @@ if (currentTime >= 1 && currentTime < 9) {
     $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'MediumSeaGreen')
     }
 
-} else {
-    //if (currentTime > 9 && currentTime < 18) {
+} //else {
+
     //takes care of calendar colors from 9am to 1am
+if (currentTime > 9 && currentTime < 18) {
     for (i=0; i < 9; i++) {    
 
         console.log("l-41 currentTime " + currentTime + " and timeArray " + timeArray[i])
@@ -27,7 +28,7 @@ if (currentTime >= 1 && currentTime < 9) {
             $(`.TextBoxColors-${timeArray[i]}`).css('background-color', 'MediumSeaGreen')
             console.log("l-44 currentTime " + currentTime + " > timeArray " + timeArray[i])
         } 
-        else if (currentTime === timeArray[i]) {
+        else if (currentTime === timeArray[i] || currentTime === 9) {
             $(`.TextBoxColors-${currentTime}`).css('background-color', 'Tomato')
             console.log("l-48 currentTime " + currentTime + " == timeArray " + timeArray[i])
         } 
@@ -38,9 +39,10 @@ if (currentTime >= 1 && currentTime < 9) {
     }
 }
 
-if (currentTime === 9) {
-    $(`.TextBoxColors-${currentTime}`).css('background-color', 'Tomato')
-}
+//shows gray after 9am
+// if (currentTime === 9) {
+//     $(`.TextBoxColors-${currentTime}`).css('background-color', 'Tomato')
+// }
 
 //localStorage.setItem("item", JSON.stringify(localS));
 
